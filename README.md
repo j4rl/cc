@@ -5,4 +5,5 @@ It could crash, IDK, I don't care.
 - [X] Free candy
 - [X] Scores counting
 - [X] Superior gameplay
+- [X] Such crash, much wow!
 
