@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function() {
     function createBoard(){
         for(i=0; i<(width*width); i++){
             const square=document.createElement('div');
-            //Sätt bakgrund här
             let randomColor=Math.floor(Math.random()*candyColors.length);
             square.style.background=candyColors[randomColor];
             square.setAttribute('id', i);
