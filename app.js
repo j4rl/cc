@@ -61,10 +61,10 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
     }
-    function dragOver(){
+    function dragOver(e){
         e.preventDefault();   
     }
-    function dragEnter(){
+    function dragEnter(e){
         e.preventDefault();
     }
     function dragLeave(){
