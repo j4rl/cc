@@ -77,5 +77,9 @@ document.addEventListener("DOMContentLoaded", function() {
         this.style.background=colorBeingDragged;
         squares[squareIdBeingDragged].style.background=colorBeingReplaced;
     }
+
+    function checkMove(checkCase, points){
+        
+    }
     
 })
