@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
         squareIdBeingDragged=parseInt(this.id);
     }
     function dragEnd(){
-        let validMoves=[
+        let validMoves = [
             squareIdBeingDragged-1,
             squareIdBeingDragged-width,
             squareIdBeingDragged+1,
@@ -70,10 +70,12 @@ document.addEventListener("DOMContentLoaded", function() {
     function dragLeave(){
 
     }
+
     function dragDrop(){
         colorBeingReplaced=this.style.background;
         squareIdBeingReplaced=parseInt(this.id);
         this.style.background=colorBeingDragged;
         squares[squareIdBeingDragged].style.background=colorBeingReplaced;
     }
+    
 })

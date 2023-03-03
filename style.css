@@ -5,9 +5,11 @@
     flex-wrap: wrap;
     background: rgb(150, 60, 82, .5);
     padding: 5px;
+    transition:all 1s ease-in-out;
 }
 .grid div{
     height:70px;
     width:70px;
     border-radius:50%;
+    transition:all 1s ease-in-out;
 }
