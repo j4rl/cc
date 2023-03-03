@@ -127,9 +127,10 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
 window.setInterval(function(){
+    moveDown();
     checkMove("threerow", 10);
     checkMove("threecolumn", 10);
-    moveDown();
+    
 }, 100);
 
 
