@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         for(i=0;i<width;i++){
             if(squares[i].style.background === ""){
-                let randomColor=Math.floor(Math.random*candyColors.length);
+                let randomColor=Math.floor(Math.random * candyColors.length);
                 squares[i].style.background=candyColors[randomColor];
             }
         }
