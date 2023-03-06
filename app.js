@@ -3,14 +3,15 @@ document.addEventListener("DOMContentLoaded", function() {
     let width=8;
     let squares=[];
     let score=0;
+    let numMoves=0;
 
     const candyColors=[
-        "red", 
-        "yellow", 
-        "orange", 
-        "purple",
-        "green",
-        "blue"
+        "radial-gradient(circle at 65% 15%, white 1px, red 3%, darkred 60%, red 100%)", 
+        "radial-gradient(circle at 65% 15%, white 1px, gold 3%, goldenrod 60%, gold 100%)", 
+        "radial-gradient(circle at 65% 15%, white 1px, orange 3%, orangered 60%, orange 100%)", 
+        "radial-gradient(circle at 65% 15%, white 1px, orchid 3%, purple 60%, orchid 100%)",
+        "radial-gradient(circle at 65% 15%, white 1px, lightgreen 3%, green 60%, lightgreen 100%)",
+        "radial-gradient(circle at 65% 15%, white 1px, aqua 3%, darkblue 60%, aqua 100%)"
     ]
 
     function createBoard(){
@@ -109,20 +110,15 @@ document.addEventListener("DOMContentLoaded", function() {
                     arrCase=[i, i+width, i+width*2, i+width*3, i+width*4];
                     arrNoGo=[32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63];
                     break;
-                case "smallpool":
+                case "pool":
                     //  X X
                     //  X X
                     arrCase=[i, i+1, i+width, i+width+1];
                     arrNoGo=[7, 15, 23, 31, 39, 47, 55,56,57,58,59,60,61,62, 63];
                     break;
-                case "bigpool": 
-                    //  X X X
-                    //  X X X
-                    //  X X X 
-                    arrCase=[i, i+1, i+2, i+width, i+width+1, i+width+2, i+width*2, i+width*2+1, i+width*2+2];
-                    arrNoGo=[6,7,14, 15, 22, 23, 30, 31, 38, 39, 46, 47, 48,49,50,51,52,53,54,55,56,57,58,59,60,61, 62, 63];
-                    break;
                 case "diamond":
+                    arrCase=[i, i+width-1, i+width+1, i+width*2];
+                    arrNoGo=[0, 7, 8, 15, 16, 23, 24, 31, 32, 39, 40, 47, 48,49,50,51,52,53,54, 55, 56,57,58,59,60,61,62, 63];
                     //    X
                     //  X   X
                     //    X
@@ -155,6 +151,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
             if(arrCase.every(index => squares[index].style.background === decidedColor && !isBlank)){
                 score += points;
+                numMoves++;
+                console.log("Number of moves: "+numMoves);
                 document.getElementById('score').innerHTML=score;
                 arrCase.forEach(index => {
                     squares[index].style.background = "";
@@ -180,6 +178,12 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     window.setInterval(function() {
+        checkMove("diamond", 1000);
+        checkMove("pool", 200);
+        checkMove("fiverow", 100);   
+        checkMove("fivecolumn", 100);
+        checkMove("fourrow", 50);
+        checkMove("fourcolumn", 50);
         checkMove("threerow", 10);
         checkMove("threecolumn", 10);
         moveDown();    
