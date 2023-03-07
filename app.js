@@ -11,8 +11,8 @@ document.addEventListener("DOMContentLoaded", function() {
         "radial-gradient(circle at 65% 15%, white 1px, orange 3%, orangered 60%, orange 100%)", 
         "radial-gradient(circle at 65% 15%, white 1px, orchid 3%, purple 60%, orchid 100%)",
         "radial-gradient(circle at 65% 15%, white 1px, lightgreen 3%, green 60%, lightgreen 100%)",
-        "radial-gradient(circle at 65% 15%, white 1px, aqua 3%, darkblue 60%, aqua 100%)",
-        "radial-gradient(circle at 65% 15%, white 1px, lightgrey 3%, darkgrey 60%, lightgrey 100%)"
+        "radial-gradient(circle at 65% 15%, white 1px, aqua 3%, darkblue 60%, aqua 100%)"//,
+        //"radial-gradient(circle at 65% 15%, white 1px, lightgrey 3%, darkgrey 60%, lightgrey 100%)"
     ]
     const specialColors=[
         "radial-gradient(circle at 65% 15%, white 1px, lightgrey 3%, darkgrey 60%, lightgrey 100%)"
@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
     createBoard();
+    setScoreBoard();
 
     //Dragging stuff around... and... stuff.
     let colorBeingDragged;
@@ -156,8 +157,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if(arrCase.every(index => squares[index].style.background === decidedColor && !isBlank)){
                 score += points;
                 numMoves++;
-                console.log("Number of moves: "+numMoves);
-                document.getElementById('score').innerHTML=score;
+                setScoreBoard();
                 arrCase.forEach(index => {
                     squares[index].style.background = "";
                 })
@@ -179,6 +179,11 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
 
+    }
+
+    function setScoreBoard(){
+        document.getElementById('score').innerHTML=score;
+        document.getElementById('moves').innerHTML=numMoves;
     }
 
     window.setInterval(function() {

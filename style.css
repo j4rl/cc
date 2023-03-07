@@ -9,12 +9,15 @@ body{
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    background: #a1a1a1;
+    background: url(assets/Final-Background.webp);
+    background-size: cover;
 }
 .inset{
     box-shadow: 0 2px 4px rgb(0,0,0,.5)  inset, 0 1px 0 #fff;
 }
 .scoreboard{
+    display:flex;
+    justify-content: space-between;
     width:560px;
     padding: 5px;
     background: rgb(150, 60, 82, .5);
@@ -23,7 +26,16 @@ body{
 }
 h1{
     font-family: 'Press Start 2P', cursive;
-
+    color:white;
+    padding-inline: 3rem;
+}
+h1:first-child{
+    align-self: flex-start;
+    text-align: left;
+}
+h1:last-child{
+    align-self: flex-end;
+    text-align: right;
 }
 .grid{
     width:560px;
@@ -33,11 +45,16 @@ h1{
     background: rgb(150, 60, 82, .5);
     padding: 5px;
     border-radius: 10px;
+    transition: all .1s ease-in-out;
 }
 .grid div{
-    height:70px;
-    width:70px;
+    height:68px;
+    width:68px;
     border-radius:50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 1px;
+    transition: all .1s ease-in-out;
 }
 .cen{
     display:flex;
