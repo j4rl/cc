@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
         "radial-gradient(circle at 65% 15%, white 1px, gold 3%, orange 60%, gold 100%)", 
         "radial-gradient(circle at 65% 15%, white 1px, orange 3%, orangered 60%, orange 100%)", 
         "radial-gradient(circle at 65% 15%, white 1px, orchid 3%, purple 60%, orchid 100%)",
-        "radial-gradient(circle at 65% 15%, white 1px, lightgreen 3%, green 60%, lightgreen 100%)",
+        "radial-gradient(circle at 65% 15%, white 1px, lime 3%, green 60%, lime 100%)",
         "radial-gradient(circle at 65% 15%, white 1px, aqua 3%, darkblue 60%, aqua 100%)"//,
         //"radial-gradient(circle at 65% 15%, white 1px, lightgrey 3%, darkgrey 60%, lightgrey 100%)"
     ]
