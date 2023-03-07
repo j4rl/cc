@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let squares=[];
     let score=0;
     let numMoves=0;
+    let hasMoved=false;
 
     const candyColors=[
         "radial-gradient(circle at 65% 15%, white 1px, red 3%, darkred 60%, red 100%)", 
@@ -32,9 +33,11 @@ document.addEventListener("DOMContentLoaded", function() {
             grid.appendChild(square);
             squares.push(square);
         }
+
     }
     createBoard();
-    setScoreBoard();
+    setScoreBoard(); //Lägger till värden i scoreboard
+
 
     //Dragging stuff around... and... stuff.
     let colorBeingDragged;
@@ -63,11 +66,14 @@ document.addEventListener("DOMContentLoaded", function() {
         let validMove=validMoves.includes(squareIdBeingReplaced);
         if(squareIdBeingReplaced && validMove){
             squareIdBeingReplaced=null;
+            hasMoved=true;
         }else if(squareIdBeingReplaced && !validMove){
             squares[squareIdBeingReplaced].style.background=colorBeingReplaced;
             squares[squareIdBeingDragged].style.background=colorBeingDragged;
+            hasMoved=false;
         }else{
             squares[squareIdBeingDragged].style.background=colorBeingDragged;
+            hasMoved=false;
         }
 
     }
@@ -155,9 +161,11 @@ document.addEventListener("DOMContentLoaded", function() {
             if(arrNoGo.includes(i)) continue; 
 
             if(arrCase.every(index => squares[index].style.background === decidedColor && !isBlank)){
-                score += points;
-                numMoves++;
-                setScoreBoard();
+                if(hasMoved){
+                    score += points;
+                    numMoves++;
+                    setScoreBoard();                    
+                }
                 arrCase.forEach(index => {
                     squares[index].style.background = "";
                 })

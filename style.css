@@ -23,6 +23,7 @@ body{
     background: rgb(150, 60, 82, .5);
     border-radius: 10px;
     margin-bottom: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 h1{
     font-family: 'Press Start 2P', cursive;
