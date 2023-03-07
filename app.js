@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const candyColors=[
         "radial-gradient(circle at 65% 15%, white 1px, red 3%, darkred 60%, red 100%)", 
-        "radial-gradient(circle at 65% 15%, white 1px, gold 3%, goldenrod 60%, gold 100%)", 
+        "radial-gradient(circle at 65% 15%, white 1px, gold 3%, orange 60%, gold 100%)", 
         "radial-gradient(circle at 65% 15%, white 1px, orange 3%, orangered 60%, orange 100%)", 
         "radial-gradient(circle at 65% 15%, white 1px, orchid 3%, purple 60%, orchid 100%)",
         "radial-gradient(circle at 65% 15%, white 1px, lightgreen 3%, green 60%, lightgreen 100%)",
@@ -132,11 +132,6 @@ document.addEventListener("DOMContentLoaded", function() {
                     arrNoGo=[0, 7, 8, 15, 16, 23, 24, 31, 32, 39, 40, 47, 48,49,50,51,52,53,54, 55, 56,57,58,59,60,61,62, 63];
                     //    X
                     //  X   X
-                    //    X
-                    break;
-                case "cross":
-                    //    X
-                    //  X X X
                     //    X
                     break;
                 case "fourleftdiagonal":
