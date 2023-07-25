@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function() {
         e.preventDefault();
     }
     function dragLeave(){
-
+        
     }
 
     function dragDrop(){
